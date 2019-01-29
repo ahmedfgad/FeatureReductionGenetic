@@ -1,5 +1,5 @@
 # Feature Reduction using Genetic Algorithm
-This project uses the genetic algotithm (GA) optimization technique for selecting the best subset of features for classifying the **Fruits360 dataset**. This project is documented in a tutorial titled "**Feature Reduction using Genetic Algorithm**" available in **my LinkedIn** profile here: .
+This project uses the genetic algotithm (GA) optimization technique for selecting the best subset of features for classifying the **Fruits360 dataset**. This project is documented in a tutorial titled "**Feature Reduction using Genetic Algorithm**" available in **my LinkedIn** profile here: https://www.linkedin.com/pulse/feature-reduction-using-genetic-algorithm-ahmed-gad.
 
 It is worth mentioning that this project it is an extension to a previously published 2 projects. Both of them are documented in a tutorial in my LinkedIn profile.
 
