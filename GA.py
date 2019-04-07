@@ -26,7 +26,7 @@ def cal_pop_fitness(pop, features, labels, train_indices, test_indices):
         train_labels = labels[train_indices]
         test_labels = labels[test_indices]
 
-        SV_classifier = sklearn.svm.SVC(gamma='scale')
+        SV_classifier = sklearn.svm.SVC(gamma='auto')
         SV_classifier.fit(X=train_data, y=train_labels)
 
         predictions = SV_classifier.predict(test_data)
