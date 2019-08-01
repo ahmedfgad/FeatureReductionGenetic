@@ -1,7 +1,6 @@
 import numpy
 import sklearn.svm
 
-
 def reduce_features(solution, features):
     selected_elements_indices = numpy.where(solution == 1)[0]
     reduced_features = features[:, selected_elements_indices]
