@@ -1,5 +1,5 @@
 import numpy
-import GA
+import ga
 import pickle
 import matplotlib.pyplot
 
@@ -41,20 +41,20 @@ num_generations = 100
 for generation in range(num_generations):
     print("Generation : ", generation)
     # Measuring the fitness of each chromosome in the population.
-    fitness = GA.cal_pop_fitness(new_population, data_inputs, data_outputs, train_indices, test_indices)
+    fitness = ga.cal_pop_fitness(new_population, data_inputs, data_outputs, train_indices, test_indices)
 
     best_outputs.append(numpy.max(fitness))
     # The best result in the current iteration.
     print("Best result : ", best_outputs[-1])
 
     # Selecting the best parents in the population for mating.
-    parents = GA.select_mating_pool(new_population, fitness, num_parents_mating)
+    parents = ga.select_mating_pool(new_population, fitness, num_parents_mating)
 
     # Generating next generation using crossover.
-    offspring_crossover = GA.crossover(parents, offspring_size=(pop_shape[0]-parents.shape[0], num_feature_elements))
+    offspring_crossover = ga.crossover(parents, offspring_size=(pop_shape[0]-parents.shape[0], num_feature_elements))
 
     # Adding some variations to the offspring using mutation.
-    offspring_mutation = GA.mutation(offspring_crossover, num_mutations=num_mutations)
+    offspring_mutation = ga.mutation(offspring_crossover, num_mutations=num_mutations)
 
     # Creating the new population based on the parents and offspring.
     new_population[0:parents.shape[0], :] = parents
@@ -62,7 +62,7 @@ for generation in range(num_generations):
 
 # Getting the best solution after iterating finishing all generations.
 # At first, the fitness is calculated for each solution in the final generation.
-fitness = GA.cal_pop_fitness(new_population, data_inputs, data_outputs, train_indices, test_indices)
+fitness = ga.cal_pop_fitness(new_population, data_inputs, data_outputs, train_indices, test_indices)
 # Then return the index of that solution corresponding to the best fitness.
 best_match_idx = numpy.where(fitness == numpy.max(fitness))[0]
 best_match_idx = best_match_idx[0]
